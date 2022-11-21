@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		var lagi = true;
+
+		while(lagi==true){
+			var kesempatan = 3;
+			var comp = Math.floor(Math.random()*10) +1;
+			alert('Tebak angka 1-10 dan kamu punya'+ kesempatan + 'percobaan lagi');
+			var hasil = '';
+
+			//mulai game
+			while(kesempatan >= 1){
+				var pemain = prompt('Masukkan angka dari 1 -10');
+				if(pemain == comp){
+					hasil = 'Tebakan Anda Benar';
+					alert('Selamat anda berhasil menabak');
+					break;
+				}else if(pemain < comp){
+					hasil = 'Terlalu Rendah';
+					kesempatan -= 1;
+					alert('Kurang tepat'+ hasil + 'anda memiliki' + kesempatan+ 'percobaan lagi');
+				}else if (pemain > comp){
+					hasil = 'Terlalu Besar';
+					kesempatan -= 1;
+					alert('Kurang tepat,'+ hasil + 'anda memiliki'+ kesempatan + 'percobaan lagi');
+				}
+				if(kesempatan === 0){
+					alert('Anda sudah sudah kehabisan percobaan dalam menebak');
+				}
+			}
+			lagi = confirm('Mau coba lagi?');
+
+		}
+		alert('Terima kasih sudah bermain');
+		
+
+
+	</script>
+</body>
+</html>
