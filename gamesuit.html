@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var tanya = true
+		while( tanya== true ){
+
+
+		
+		var pemain = prompt(`pilih : batu, gunting, kertas`);
+
+		var comp = Math.random();
+
+		if(comp < 0.3){
+			comp = `batu`;
+		}else if(comp >= 0.3 && comp <= 0.5){
+			comp = `gunting`;
+		}else {
+			comp = `kertas`;
+		}
+		
+
+		//memulai rules
+		var hasil = ''; 
+		if(pemain == comp){
+			hasil = 'SERI';
+		}else if(pemain == 'batu'){
+			hasil = (comp == `kertas`) ? 'Kalah' : 'Menang';
+		}else if (pemain == 'kertas'){
+			hasil = (comp == 'gunting') ? 'Kalah' : 'Menang';
+		}else if (pemain == 'gunting'){
+			hasil = (comp == 'batu') ? 'Menang' : 'Kalah';
+		}else {
+			hasil ='Inputan yang anda masukkan salah';
+		}
+		alert('Anda memilih'+ ' ' + pemain + 'Komputer memilih'+ comp +'\n dan hasilnya adalah anda' + hasil);
+
+		tanya = confirm('Lagi ?');
+		}
+		alert('Terima kasih sudah bermain di game ga jelas ini');
+	</script>
+</body>
+</html>
